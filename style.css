@@ -1,0 +1,98 @@
+.data > div {
+
+  text-align: center;
+  font-size: 1.5em;
+  font-family: Arial;
+  font-weight: bold;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  margin: 5px;
+
+}
+
+.header1 {
+    grid-area: hd;
+	background: red;
+}
+
+.header2 {
+    grid-area: hd;
+  background: red;
+} 
+
+
+.other1 {
+    grid-area: oh1; 
+  background: green;
+}
+.other2 {
+    grid-area: oh2; 
+  background: green;
+}
+.other3 {
+    grid-area: oh3; 
+  background: green;
+}
+
+.other4 {
+    grid-area: oh4; 
+  background: green;
+}
+
+.other5 {
+    grid-area: oh5; 
+  background: green;
+}
+
+.other6 {
+    grid-area: oh6; 
+  background: green;
+}
+
+.other7 {
+    grid-area: oh7; 
+  background: green;
+}
+
+.other8 {
+    grid-area: oh8; 
+  background: green;
+}
+
+.other9 {
+    grid-area: oh9; 
+  background: green;
+}
+
+
+.sl_ctr{
+position:relative;
+width:450px;
+height:300px;
+overflow:hidden;
+}
+.sldr{
+position:relative;
+width:10000px;
+height:300px;
+}
+.sldr img{
+float:left;
+}
+.prv_b, .nxt_b{
+position:absolute;
+top:135px;
+display:block;
+width:35px;
+height:35px;
+cursor:pointer;
+}
+.prv_b:hover, .nxt_b:hover{opacity:.6;}
+.prv_b{
+left:10px;
+background:url(images/prv.png) no-repeat;
+}
+.nxt_b{
+right:10px;
+background:url(images/nxt.png) no-repeat;
+}
