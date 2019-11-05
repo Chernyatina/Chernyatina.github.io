@@ -1,32 +1,48 @@
 <div><html>
   <head>
-  <meta name=viewport content="width=1000">
-  </head>
+  <meta name=viewport content="width=1000">  
  <body>
   <center>
-  <p><img src="screen.png" max-width: 80% alt="таблиця"></p>
+  <p><img src="screen.png" max-width: 100% alt="таблиця"></p>
   </center>
  </body>
 </html></div>
 <div><style type="text/css">
   input, textarea {   max-width:100% }
    TABLE {
-    table-layout: fixed; /* Фиксированная ширина ячеек */
-    width: 80%;
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    table-layout: fixed; 
+    width: 59%;
+    border-collapse: collapse; 
    }
    TD, TH {
-    padding: 3px; /* Поля вокруг содержимого таблицы */
-    border: 1px solid black; /* Параметры рамки */
+    padding: 3px; 
+    border: 1px solid black; 
    }
    TH {
-    background: ##DCDCDC; /* Цвет фона */
+    background: ##DCDCDC; 
    }
    td {
   text-align: center;
   vertical-align: middle; 
   font-weight: bold;     
 } 
+@media screen and (max-device-width: 300px) {
+  body{
+    font-size: 7px;
+  }
+  h1 {
+    padding: -10px;
+    margin: -10px;
+    text-align: left;
+    color: black;
+  }
+}
+
+@media screen and (max-device-width: 245px) {
+  body{
+    margin-left: -350px;
+    font-size: 5px;
+  }
   </style>
 <title>Table</title>
 <table border="1">  
@@ -64,16 +80,16 @@ border: 2px solid #ccc;">
 <xmp>
  <style type="text/css">
    TABLE {
-    table-layout: fixed; /* Фиксированная ширина ячеек */
+    table-layout: fixed; 
     width: 72%;
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    border-collapse: collapse; 
    }
    TD, TH {
-    padding: 3px; /* Поля вокруг содержимого таблицы */
-    border: 1px solid black; /* Параметры рамки */
+    padding: 3px; 
+    border: 1px solid black; 
    }
    TH {
-    background: #b0e0e6; /* Цвет фона */
+    background: #b0e0e6; 
    }
    td {
   text-align: center;
