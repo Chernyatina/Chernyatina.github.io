@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+	 <car group="Sport coupe">
+	  <name>Jaguar F-Type Coupe</name>
+	  <years>2013</years>
+	  <spaciousness>double</spaciousness>
+	 </car>
+	 <car group="Sport coupe">
+	  <name>Toyota Supra</name>
+	  <years>2019</years>
+	  <spaciousness>double</spaciousness>
+	 </car>
+	 <car group="Sport utility">
+	  <name>Haval H5</name>
+	  <years>2013</years>
+	  <spaciousness>quintuple</spaciousness>
+	 </car>
+	 <car group="Sport utility">
+	  <name>Chevrolet Tahoe</name>
+	  <years>2019</years>
+	  <spaciousness>eight-seater</spaciousness>
+	 </car>
+	 <car group="Sport utility">
+	  <name>Isuzu D-Max</name>
+	  <years>22019</years>
+	  <spaciousness>double</spaciousness>
+	 </car>
+	 <car group="Cabriolet">
+	  <name>Lexus LC</name>
+	  <years>2019</years>
+	  <spaciousness>2+2</spaciousness>
+	 </car>
+	 <car group="Cabriolet">
+	  <name>Porsche 911 Targa 4 GTS</name>
+	  <years>2015</years>
+	  <spaciousness>double</spaciousness>
+	 </car>
+	 <car group="Cabriolet">
+	  <name>Citroen E-Mehari</name>
+	  <years>2015</years>
+	  <spaciousness>quadruple</spaciousness>
+	</car>
+</cars>
