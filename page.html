@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лаб</title>
+<script category="text/javascript">
+
+function loadXML(file) {
+ try { 
+ var req = new XMLHttpRequest();
+ req.open("GET", file, false);
+ req.send(null);
+ return req.responseXML;
+ }
+ catch (e) {
+
+ try {
+ var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+ xmlDoc.async = false;
+ xmlDoc.load(file);
+ return xmlDoc;
+ }
+ catch (e) {
+ alert(e.message);
+ return null;
+ }
+ }
+} 
+
+</script>
+<style>
+	.boxNameCars {
+		display: flex;
+        justify-content: center;
+        align-items: center;
+		padding: 10px;
+		background-color: lightgray;}
+
+	.boxNameCars a {
+		font-size: 30px;
+		font-family: 'Comic Sans MS', sans-serif;	
+		margin-right: 12px;
+		transition: 2s linear;
+		text-decoration: none;}
+
+	.boxNameCars a:hover {
+		transition: 2s linear;
+	}
+
+	@media (max-width: 570px) {
+		.boxNameCars {
+			display: block;
+			text-align: center;}
+		}
+
+</style>
+</head>
+<body>
+<div class="boxNameCars">
+	<a name="Sport coupe" href="#" onmouseover="cars(this)" style="color: yellow">Sport coupe</a> <br /> 
+	<a name="Sport utility" href="#" onmouseover="cars(this)" style="color: red;text-decoration: none;" >Sport utility</a> <br /> 
+	<a name="Cabriolet" href="#" onmouseover="cars(this)" style="color: blue;">Cabriolet</a> <br /> 
+</div>
+
+<div class="boxDiv">
+<div id="boxCars" style="height: 350px"></div>	
+	<br /> 
+	<div id="boxCarsNumberOne">
+	<center>
+		<div id="boxCarsNumberTwo">
+			<div name="name0" id="name0"></div>
+			<div name="years0" id="years0"></div>
+			<div name="spaciousness0" id="spaciousness0"></div>
+	<br /> <br />
+			<div name="name1" id="name1"></div>
+			<div name="years1" id="years1"></div>
+			<div name="spaciousness1" id="spaciousness1"></div>
+	<br /> <br />
+			<div name="name2" id="name2"></div>
+			<div name="years2" id="years2"></div>
+			<div name="spaciousness2" id="spaciousness2"></div>
+	</center>
+	</div>
+</div>
+
+
+<script category="text/javascript">
+
+var xmlDoc = loadXML("https://chernyatina.github.io/cars.xml");
+
+function cars(coloredLink) {
+ var group = coloredLink.name;
+ var index = 0;
+ var divNum = 3; 
+
+ for (var i = 0; i < xmlDoc.getElementsByTagName("car").length; i++) {
+
+ var name = "name" + index;
+ var years = "years" + index;
+ var spaciousness = "spaciousness" + index;
+ var boxCars = document.getElementById('boxCars');
+ var boxCarsNumberOne = document.getElementById('boxCarsNumberOne');
+ var boxCarsNumberTwo = document.getElementById('boxCarsNumberTwo');
+
+ if (xmlDoc.getElementsByTagName("car")
+ [i].attributes.getNamedItem("group").nodeValue == group) { 
+
+
+ document.getElementById(name).innerHTML = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+ document.getElementById(years).innerHTML = xmlDoc.getElementsByTagName("years")[i].childNodes[0].nodeValue;
+ document.getElementById(spaciousness).innerHTML = xmlDoc.getElementsByTagName("spaciousness")[i].childNodes[0].nodeValue;
+
+ index++;
+
+ boxCars.style.fontFamily = "'Comic Sans MS', 'Arial', sans-serif";	
+ boxCars.style.background = "center";
+ boxCars.style.filter = "blur(2px)";
+ boxCars.style.transition =  "2s linear";
+ boxCarsNumberOne.style.transition =  "2s linear";
+ boxCarsNumberOne.style.marginTop= "-350px";
+ boxCarsNumberOne.style.marginLeft = "40%";
+ boxCarsNumberOne.style.marginRight = "40%";
+ boxCarsNumberOne.style.position = "absolute";
+ boxCarsNumberTwo.style.backgroundColor = "lightgray";
+ boxCarsNumberTwo.style.padding = "10px 80px";
+ boxCarsNumberTwo.style.borderRadius = "20px";
+ boxCarsNumberTwo.style.transition =  "1s linear";
+
+
+   if (group == "Sport coupe") {
+ 	boxCars.style.backgroundImage = "url(https://images.hdqwalls.com/download/porsche-718-cayman-gts-2017-zj-1920x1080.jpg";
+ 	boxCarsNumberTwo.style.color = "yellow";
+ 	}
+
+   if (group == "Sport utility") {
+ 	boxCars.style.backgroundImage = "url(https://www.mercedes-benz.com.au/passengercars/content-pool/marketing-pool/product-page-stages/gle-v167-stage/_jcr_content/par/stageelement.MQ6.0.20191216021446.jpeg)";
+ 	boxCarsNumberTwo.style.color = "red";}
+
+ 	if (group == "Cabriolet") {
+ 	boxCars.style.backgroundImage = "url(https://mercedes-benz.autoua.net/media/catalog/2/9/p1758229-1522073207.jpg)";
+ 	boxCarsNumberTwo.style.color = "blue";}
+
+ }
+
+}
+
+ for (var temp = index; temp < divNum; temp++) {
+
+ name = "name" + temp;
+ years = "years" + temp;
+ spaciousness = "spaciousness" + temp;
+
+ document.getElementById(name).innerHTML = "";
+ document.getElementById(years).innerHTML = "";
+ document.getElementById(spaciousness).innerHTML = "";
+
+ }
+
+}
+</script>
+</body>
+</html>
